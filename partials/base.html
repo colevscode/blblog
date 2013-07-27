@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/bootstrap-responsive.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/d3.parsets.css">
+
+    <script src="/scripts/jquery.js"></script>
+    <script src="/scripts/bootstrap.js"></script>
+    <script src="/scripts/d3.v3.js"></script>
+    <script src="/scripts/d3.parsets.js"></script>
+
+    {{$ servercomment }}
+    {{$ each {$ meta.styles } as style }}
+       <link rel="stylesheet" href="{$ style }">
+    {{$ endeach }}
+
+    {{$ each {$ meta.scripts } as script }}
+       <script src="{$ script }"></script>
+    {{$ endeach }}
+    {{$ endservercomment }}
+
+    <title>Backlift blog | {$ meta.title }</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+  </head>
+  <body>
+
+    <div class="full-width" id="titlebar">
+      <div class="container">
+
+        <div class="menu-nav row pull-right">
+          <div class="btn-group span">
+            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" id="dropmain">
+              Explore
+              <span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropmain">
+              <li><a href="http://backlift.com">backlift home</a></li>
+              <li><a href="http://backlift.github.com/docs">documentation</a></li>
+              <li><a href="http://roadma.ps/28R">roadmap</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <a class="brand" href="http://backlift.com" id='homelink'>
+          Backlift blog
+        </a>
+
+        <div style="display:inline-block;position:relative">
+          <img class="tric" src="/images/tric-draw-small.png">
+        </div>
+
+      </div>
+    </div>
+
+
+    <div id="content">
+      <div class="container">
+        <!-- main content -->
+
+        <div class="row">
+          {$ content }
+        </div>
+
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-30341755-1']);
+      _gaq.push(['_setDomainName', 'backlift.com']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>    
+
+  </body>
+</html>

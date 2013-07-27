@@ -1,0 +1,9 @@
+<div id="archive-list">
+  {{$ each /backlift/files/entry/*.html as post | sort {$ post.created } | reversed | public }}
+      <div class="archive-entry">
+          <a href="{{$ write {$ post.path } | replace '.html' '' }}">
+              {$ post.title }
+          </a>
+      </div>
+  {{$ endeach }}
+</ul>

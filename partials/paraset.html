@@ -1,0 +1,34 @@
+<div id="{$ columns.1 }vis"></div>
+
+<script>
+var chart = d3.parsets()
+      .dimensions({$ columns })
+      .width($("#vis").width());
+
+var vis = d3.select("#vis").append("svg")
+    .attr("width", "100%");
+
+var draw = function(d) {
+  vis.datum(d).call(chart);
+}
+
+var data;
+d3.csv("/data/data.csv", function(csv) {
+  data = csv;
+  draw(data);
+});
+
+// $(window).resize(function() {
+//     if(this.resizeTO) clearTimeout(this.resizeTO);
+//     this.resizeTO = setTimeout(function() {
+//         $(this).trigger('resizeEnd');
+//     }, 500);
+// });
+
+// $(window).bind('resizeEnd', function() {
+// 	if (data) {
+// 		draw(data);
+// 	}
+// });
+
+</script>

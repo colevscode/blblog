@@ -1,0 +1,33 @@
+frameworks,script,style,compiler,backend,devs,designers
+angular,javascript,less,no,other,3 to 10,no
+angular,coffeescript,sass,yes,rails,1 or 2,no
+none,javascript,css,no,other,1 or 2,no
+backbone,coffeescript,stylus,yes,rails,3 to 10,yes
+backbone,coffeescript,sass,yes,rails,3 to 10,yes
+angular,javascript,css,yes,other,1 or 2,no
+none,coffeescript,css,no,node,1 or 2,no
+none,javascript,less,no,node,1 or 2,no
+backbone,javascript,less,yes,django,3 to 10,no
+angular,coffeescript,sass,yes,rails,1 or 2,no
+backbone,javascript,sass,no,other,1 or 2,no
+angular,javascript,css,yes,other,1 or 2,no
+other,coffeescript,css,yes,django,3 to 10,yes
+backbone,coffeescript,less,no,other,3 to 10,no
+backbone,javascript,sass,no,other,3 to 10,no
+backbone,coffeescript,sass,yes,django,1 or 2,yes
+angular,coffeescript,sass,yes,node,1 or 2,no
+none,coffeescript,sass,yes,rails,1 or 2,no
+backbone,javascript,sass,no,other,over 10,yes
+none,javascript,sass,yes,other,1 or 2,yes
+backbone,javascript,less,no,node,1 or 2,no
+none,javascript,sass,yes,django,1 or 2,yes
+backbone,coffeescript,sass,yes,rails,3 to 10,yes
+none,javascript,sass,no,rails,over 10,no
+other,coffeescript,less,yes,other,3 to 10,no
+other,coffeescript,stylus,yes,node,3 to 10,yes
+backbone,javascript,sass,yes,node,3 to 10,yes
+none,javascript,sass,no,rails,3 to 10,no
+backbone,javascript,less,no,django,3 to 10,yes
+angular,javascript,less,no,django,1 or 2,yes
+none,javascript,sass,no,other,1 or 2,no
+none,coffeescript,sass,no,rails,1 or 2,no

@@ -1,0 +1,26 @@
+{{$meta}}
+title: Home
+{{$endmeta}}
+
+{{$ layout /partials/base.html as content }}
+
+<!-- snippets of each post -->
+
+<div class="span8">
+  {{$ each /backlift/files/entry/*.html as post | sort {$ post.created } | reversed | public }}
+    <div class="snippet">
+      <h1>
+        {$ post.title }
+      </h1>
+      {{$ include {$ post.path } | nolayout | tobreak }} ...
+      <a href="{{$ write {$ post.path } | replace '.html' '' }}"> read more </a>
+    </div>
+  {{$ endeach }}
+</div>
+
+<!-- post list -->
+
+<div class="span4 sidebar">
+  {{$ include /partials/postlist.html }}
+</div>
+
