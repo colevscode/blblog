@@ -1,0 +1,31 @@
+<script>
+var paradata;
+window.drawpara = function (viz, chart) {
+  var _call = function() {
+    viz.datum(paradata).call(chart);
+  }
+  if (paradata) {
+    _call();
+
+  } else {
+    d3.csv("/data/data.csv", function(csv) {
+      paradata = csv;
+      _call();
+    });
+  }
+}
+
+// $(window).resize(function() {
+//     if(this.resizeTO) clearTimeout(this.resizeTO);
+//     this.resizeTO = setTimeout(function() {
+//         $(this).trigger('resizeEnd');
+//     }, 500);
+// });
+
+// $(window).bind('resizeEnd', function() {
+//  if (data) {
+//    draw(data);
+//  }
+// });
+
+</script>

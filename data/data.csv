@@ -1,33 +1,33 @@
 framework,frontend mvc,scripts,styles,backend,backend mvc,devs,designers
-angular,yes,javascript,less,other,no,more,no
 angular,yes,coffeescript,sass,rails,yes,1 or 2,no
+angular,yes,javascript,less,other,no,3 or more,no
 none,no,javascript,css,other,no,1 or 2,no
-backbone,yes,coffeescript,stylus,rails,yes,more,yes
-backbone,yes,coffeescript,sass,rails,yes,more,yes
+backbone,yes,coffeescript,stylus,rails,yes,3 or more,yes
+backbone,yes,coffeescript,sass,rails,yes,3 or more,yes
 angular,yes,javascript,css,other,no,1 or 2,no
 none,no,coffeescript,css,node,no,1 or 2,no
 none,no,javascript,less,node,no,1 or 2,no
-backbone,yes,javascript,less,django,yes,more,no
+backbone,yes,javascript,less,django,yes,3 or more,no
 angular,yes,coffeescript,sass,rails,yes,1 or 2,no
 backbone,yes,javascript,sass,other,no,1 or 2,no
 angular,yes,javascript,css,other,yes,1 or 2,no
-other,yes,coffeescript,css,django,yes,more,yes
-backbone,yes,coffeescript,less,other,no,more,no
-backbone,yes,javascript,sass,other,no,more,no
+other,yes,coffeescript,css,django,yes,3 or more,yes
+backbone,yes,coffeescript,less,other,no,3 or more,no
+backbone,yes,javascript,sass,other,no,3 or more,no
 backbone,yes,coffeescript,sass,django,yes,1 or 2,yes
 angular,yes,coffeescript,sass,node,no,1 or 2,no
 none,no,coffeescript,sass,rails,yes,1 or 2,no
-backbone,yes,javascript,sass,other,no,more,yes
+backbone,yes,javascript,sass,other,no,3 or more,yes
 none,no,javascript,sass,other,no,1 or 2,yes
 backbone,yes,javascript,less,node,no,1 or 2,no
 none,no,javascript,sass,django,yes,1 or 2,yes
-backbone,yes,coffeescript,sass,rails,yes,more,yes
-none,no,javascript,sass,rails,yes,more,no
-other,yes,coffeescript,less,other,no,more,no
-other,yes,coffeescript,stylus,node,no,more,yes
-backbone,yes,javascript,sass,node,no,more,yes
-none,no,javascript,sass,rails,yes,more,no
-backbone,yes,javascript,less,django,yes,more,yes
+backbone,yes,coffeescript,sass,rails,yes,3 or more,yes
+none,no,javascript,sass,rails,yes,3 or more,no
+other,yes,coffeescript,less,other,no,3 or more,no
+other,yes,coffeescript,stylus,node,no,3 or more,yes
+backbone,yes,javascript,sass,node,no,3 or more,yes
+none,no,javascript,sass,rails,yes,3 or more,no
+backbone,yes,javascript,less,django,yes,3 or more,yes
 angular,yes,javascript,less,django,yes,1 or 2,yes
 none,no,javascript,sass,other,no,1 or 2,no
 none,no,coffeescript,sass,rails,yes,1 or 2,no
