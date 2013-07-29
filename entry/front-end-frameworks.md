@@ -8,9 +8,9 @@ disqusid: front-end-frameworks
 
 {{$ layout /partials/blogentry.html as content }}
 
-Lately we've been hearing a lot of buzz about Angular.js, and have been itching to try it on a larger project. In the past we've primarily used Backbone.js. Our entire site and most of our templates are written in backbone. But we've also played around with angular, and have written a few angular tutorials that were quite popular. (Especially our post on [Using AngularJS with a Backend API](/entry/angular-tut2) that hit the #1 spot on google for "angular backend") With an overhaul of the Backlift website on the horizon, we figured it was time to give angular a more serious look.
+Lately we've been hearing a lot of buzz about Angular.js. We have been itching to try it on a larger project. We're primarily a Backbone.js shop-- our entire site and most of our templates are written in backbone. But we've also played around with angular, and have written a few angular tutorials that were quite popular. (Especially our post on [Using AngularJS with a Backend API](/entry/angular-tut2)) With an overhaul of the Backlift website on the horizon, we figured it was time to give angular a more serious look.
 
-Before laying down code, we wanted to find out more information. What other startups are using Angular? How big are those companies, and what backend stacks are they running? We also wanted to know what other frontend tools startups are using, like SASS or Coffeescript. To answer these questions we sent a poll out to hundreds of other startup founders and friends. (primarily YC companies) We received over 30 responses and here are the results:
+Before laying down code, we wanted to find out more information. What other startups are using Angular? How big are those companies, and what backend stacks are they running? We also wanted to know what other frontend tools startups are using, like SASS or Coffeescript. To answer these questions we sent a poll out to hundreds of other startup founders and friends. (primarily YC companies) We received over 30 responses. Here are the results:
 
 ## What's your frontend stack?
  
@@ -18,7 +18,7 @@ Before laying down code, we wanted to find out more information. What other star
 	{{$ include /partials/d3bargraphs.html }}
 {{$ endwith }}
 
-We were struck by the fact that two thirds of companies that responded were using some kind of frontend MVC framework. Backbone was the most popular, and was also favored by larger startups, as determined by the size of their development teams. The majority of smaller startups, on the other hand, were either using Angular, or no MVC framework. It seems from this relatively small sampling that Backbone remains the dominant MVC framework for now, but Angular definitely has a significant following. Perhaps Angular's double-binding and reduced boilerplate are compelling features for small teams with severely limited time.
+We were struck by the fact that two thirds of companies that responded were using some kind of frontend MVC framework. Backbone was the most popular, and was favored by larger startups (as determined by the size of their development teams). Smaller startups, on the other hand, were either using Angular, or no MVC framework. It seems from this relatively small sampling that Backbone remains the dominant MVC framework, but Angular definitely has a significant following. Perhaps Angular's double-binding and reduced boilerplate are compelling features for small teams that don't have dedicated frontend developers.
 
 We also asked what backend stack startups were using. We had a theory that companies using a frontend MVC framework would be more likely to use a lightweight server, one that merely provides a RESTful API layer over the database. (That's what we're dong here at Backlift) Here's what we discovered:
 
@@ -26,7 +26,7 @@ We also asked what backend stack startups were using. We had a theory that compa
 	{{$ include /partials/d3bargraphs.html }}
 {{$ endwith }}
 
-... Basically we saw an even split. It doesn't appear from this data that the choice of frontend framework affected the choice to use an MVC backend stack.
+... Basically we saw an even split. It doesn't appear from this data that the choice of frontend framework affected the choice to use a lightweight backend.
 
 Finally, we were curious which startups used frontend compiled languages like coffeescript, SASS and LESS. We also wanted to know whether the presence of designers on the team had an impact. Here's what we found:
 
@@ -36,11 +36,11 @@ Finally, we were curious which startups used frontend compiled languages like co
 	{{$ include /partials/paraset.html }}
 {{$ endwith }}
 
-Most startups that responded were using some kind of intermediate CSS language. SASS was the clear winner, with more than half of the startups using it alone. The startups without designers made up the majority of LESS users, while startups with at least one designer were especially unlikely to use plain CSS. The use of plain old javascript was slightly higher than coffeescript. 
+Most startups that responded were using some kind of intermediate CSS language. SASS was the clear winner, with more than half of the startups using it alone. The startups without designers made up the majority of LESS users. (If I were to speculate, I'd guess that those teams are also using Bootstrap.) Startups with at least one designer mostly used SASS, and were especially unlikely to use plain CSS. The division between javascript and coffeescript was pretty even, with slightly more companies using plain javascript.  
 
 ## Conclusions
 
-Overall the majority of startups that responded to our survey were using some kind of frontend MVC framework, the most popular of which was Backbone.js. Also startups were more likely to use SASS or LESS than plain old CSS. Beyond that, it was difficult to draw sweeping conclusions. However, we may have missed something, so we're including the full dataset [here](/data/data.csv), along with a <a href="" id="kitchensink">kitchen-sink visualization of the data</a>. (Tufte, please forgive us)
+Overall the majority of startups that responded to our survey were using some kind of frontend MVC framework, the most popular of which was Backbone.js. Also almost all the startups were using SASS or LESS rather than plain old CSS. Beyond that, it was difficult to draw sweeping conclusions. However, we may have missed something, so we're including the full dataset [here](/data/data.csv), along with a <a href="" id="kitchensink">kitchen-sink visualization of the data</a>. (Tufte, please forgive us)
 
 {{$ with '{"name": "all", "style":"display: none; margin-bottom: 10px", "data":["framework", "devs", "designers", "backend", "scripts"]}' as data }}
 	{{$ include /partials/paraset.html }}
@@ -54,7 +54,7 @@ $('#kitchensink').click(function(ev) {
 </script>
 
 
-We'd love to hear what you're using. Please fill out the survey below. If the results reveal a different trend, we'll be sure to post an update. Also feel free to tell us what frontend stack you're using by posting in the [Hacker News comments]().
+We'd love to hear what you're using. Please fill out the survey below. If the results reveal a different trend, we'll be sure to post an update. <!--Also feel free to tell us what frontend stack you're using by posting in the [Hacker News comments]().--> Thanks!
 
 
 <h2><a id="survey"></a>Tell us about your frontend stack!</h2>
@@ -130,7 +130,7 @@ We'd love to hear what you're using. Please fill out the survey below. If the re
 
 	<label>Results:</label>
 
-	{{$ with '{"name": "user", "url": "/backlift/data/frontstackresponses", "columns": {"framework": ["angular", "backbone", "ember", "other", "none"] }}' as data }}
+	{{$ with '{"name": "user", "url": "/backlift/data/frontstackresponses", "columns": {"framework": ["angular", "backbone", "ember", "other", "none"] } }' as data }}
 		{{$ include /partials/d3minibargraphs.html }}
 	{{$ endwith }}
 
