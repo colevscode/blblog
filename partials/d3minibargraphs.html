@@ -1,0 +1,95 @@
+<div id="bargraphs{$ data.name }"></div>
+
+<script>
+(function() {
+
+  var margin = {top: 20, right: 0, bottom: 20, left: 25},
+      width = $("#bargraphs{$ data.name }").width() - margin.left - margin.right,
+      height = 300 - margin.top - margin.bottom,
+      series = "1 or 2";
+
+  var x = d3.scale.ordinal()
+      .rangeRoundBands([0, width], .1, 0);
+
+  var y = d3.scale.linear()
+      .range([height, 0]);
+
+  var xAxis = d3.svg.axis()
+      .scale(x)
+      .tickSize(0)
+      .orient("bottom");
+
+  var yAxis = d3.svg.axis()
+      .scale(y)
+      .tickSize(0)
+      .orient("left");
+
+  var color = d3.scale.category10();
+      // .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+  d3.json("{$ data.url }", function(error, data) {
+
+    var columns = d3.keys({$ data.columns });
+
+    columns.forEach(function (c) {
+
+      var totals = {};
+      var validate = function(v) { return d3.set({$ data.columns }[c]).has(v.toLowerCase())};
+
+      data.forEach(function(d) {
+        var val = d[c];
+        if (val && validate(val)) {
+          totals[val] = (totals[val]||0) + 1;
+        }
+      });
+
+      x.domain(d3.keys(totals));
+      y.domain([0, d3.max(d3.values(totals))]);
+
+      var y_max = y.domain().slice(-1)[0];
+      var y_step = Math.floor(y_max / d3.min([y_max||1, 5]));
+      var yAxis = d3.svg.axis()
+          .scale(y)
+          .tickSize(0)
+          .orient("left")
+          .tickValues(d3.range(0, y_max+1, y_step))
+          .tickFormat(d3.format(",.0f"));
+
+      var svg = d3.select("#bargraphs{$ data.name }").append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      svg.append("g")
+          .attr("class", "xaxis")
+          .attr("style", "font-size: small;")
+          .attr("transform", "translate(0," + height + ")")
+          .call(xAxis);
+
+      svg.append("g")
+          .attr("class", "yaxis")
+          .attr("style", "font-size: small;")
+          .call(yAxis);
+      //   .append("text")
+      //     .attr("transform", "rotate(-90)")
+      //     .attr("y", 6)
+      //     .attr("dy", ".71em")
+      //     .style("text-anchor", "end")
+      //     .text("# startups");
+
+      svg.selectAll("rect")
+        .data(d3.entries(totals))
+          .enter().append("rect")
+            .attr("width", x.rangeBand())
+            .attr("x", function(d) { return x(d.key); })
+            .attr("y", function(d) { return y(d.value); })
+            .attr("height", function(d) { return y(0) - y(d.value); })
+            .attr("fill", function(d) { return color(1); })
+            .attr("fill-opacity", "0.8");
+    });
+
+  });
+})();
+
+</script>

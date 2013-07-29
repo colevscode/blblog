@@ -5,10 +5,9 @@
   <div class="blogcontent">
     <h1>{$ meta.title }</h1>
     {$ content }
-    <span>{$ meta.author } {{$ write {$ meta.created } | dateformat "%b %d %Y" }}</span>
+    <span>-- by {$ meta.author } on {{$ write {$ meta.created } | dateformat "%b %d %Y" }}</span>
   </div>
 
-  {{$comm}}
   <div id="disqus_thread"></div>
   <script type="text/javascript">
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -26,7 +25,6 @@
   </script>
   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-  {{$endcomm}}
 </div>
 
 

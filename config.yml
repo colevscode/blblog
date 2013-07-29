@@ -1,3 +1,10 @@
 redirect_to_https: no
-
+session_secure: no
 optimize: no
+
+
+collections:
+    frontstackresponses:
+        framework: {required: yes}
+        email: {type: email, writeonly: yes}
+        company: {writeonly: yes}
